@@ -1,5 +1,5 @@
-import kalkulator 
+import calculator 
 
-def test_kalkulator_wujud():
+def test_calculator_wujud():
     # 2. Ujian untuk pastikan fail kalkulator anda berjaya dibaca tanpa error
-    assert hasattr(kalkulator, '__file__')
+    assert hasattr(calculator, '__file__')
