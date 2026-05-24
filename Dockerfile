@@ -5,7 +5,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # 3. Salin fail kod kalkulator dan ujian dari GitHub masuk ke dalam bekas
-COPY kalkulator.py .
+COPY calculator.py .
 COPY test_calculator.py .
 
 # 4. Arahan untuk pasang perisian pytest di dalam bekas
