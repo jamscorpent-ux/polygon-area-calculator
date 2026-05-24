@@ -1,22 +1,17 @@
-name: Jalankan Ujian Python
+name: Jalankan Ujian Python Menggunakan Docker
 
 on: push
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
     - name: Ambil Kod Kalkulator
       uses: actions/checkout@v4
 
-    - name: Sediakan Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+    - name: Bina Bekas Docker (Build Docker Image)
+      run: docker build -t kalkulator-app .
 
-    - name: Pasang Pytest
-      run: pip install pytest
-
-    - name: Jalankan Kod Ujian
-      run: python -m pytest test_calculator.py
+    - name: Jalankan Ujian Dalam Docker (Run Docker Container)
+      run: docker run kalkulator-app
